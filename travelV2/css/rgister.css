@@ -1,0 +1,207 @@
+:root {
+    --primary-color: #3498db; /* Warna Biru untuk tombol */
+    --text-color-light: #f0f0f0;
+    --background-color: #0b0c10;
+    --card-bg-color: rgba(255, 255, 255, 0.2); /* Latar belakang transparan */
+    --card-border-radius: 20px;
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-poppins);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Mencegah scroll pada background */
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    /* Ganti URL dengan URL gambar latar belakang Anda */
+    background: url('../web/Bahan/webani.jpg') no-repeat center center/cover;
+}
+
+/* --- Bagian Kiri (Marketing Side) --- */
+.marketing-side {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-color-light);
+    /* Sedikit bayangan/overlay agar teks lebih terbaca */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)); 
+}
+
+.logo {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 0px;
+}
+
+.plane-icon {
+    font-size: 60px;
+    margin-right: 5px;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0px 0;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.description {
+    font-size: 0.9rem;
+    font-weight: 300;
+    max-width: 450px;
+}
+
+/* --- Bagian Kanan (Registration Side) --- */
+.registration-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-card {
+    background-color: var(--card-bg-color);
+    backdrop-filter: blur(15px); /* Efek blur/kaca */
+    padding: 40px;
+    border-radius: var(--card-border-radius);
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Bayangan */
+}
+
+.form-card h2 {
+    color: var(--text-color-light);
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.85); /* Latar belakang input sedikit putih */
+    color: var(--background-color);
+    font-size: 1rem;
+    font-family: var(--font-poppins);
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.input-group input:focus {
+    background-color: #fff;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #2980b9;
+}
+
+.login-prompt {
+    margin-top: 20px;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-prompt a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.login-prompt a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Media Query untuk Responsif */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        background: none; /* Hapus gambar latar belakang utama di mobile */
+    }
+
+    .marketing-side {
+        flex: none;
+        padding: 30px;
+        text-align: center;
+        /* Tambahkan latar belakang gelap agar teks terbaca di mobile */
+        background-color: var(--background-color); 
+    }
+    
+    .logo {
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .subtitle, .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .registration-side {
+        flex: none;
+        padding: 30px;
+        /* Set gambar latar belakang hanya untuk sisi registrasi agar mirip */
+        background: url('image_db287b.jpg-c7d71243-148d-43af-90f2-0b31c6b596ed') no-repeat center center/cover;
+        min-height: 50vh;
+    }
+    
+    .form-card {
+        max-width: 100%;
+    }
+}

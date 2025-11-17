@@ -1,0 +1,230 @@
+:root {
+    --primary-color: #1e90ff; /* Warna Biru untuk tombol */
+    --text-color-light: #f0f0f0;
+    --background-color-overlay: rgba(0, 0, 0, 0.4);
+    --card-bg-color: rgba(255, 255, 255, 0.15); /* Latar belakang transparan */
+    --card-border-radius: 35px;
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-poppins);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    /* Ganti URL dengan URL gambar latar belakang Anda */
+    background: url('../web/Bahan/login.jpg') no-repeat center center/cover;
+    padding: 0 80px; /* Padding dari body dipindahkan ke container */
+}
+
+/* --- Bagian Kiri (Marketing Side) - Disesuaikan dari kode Anda (.text-section) --- */
+.marketing-side {
+    flex: 1;
+    padding: 60px 0; /* Menyesuaikan padding agar pas dengan form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-color-light);
+    max-width: 500px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.plane-icon {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.main-title {
+    /* Menggabungkan h1 dan h2 dari kode Anda */
+    font-size: 4rem; /* 80px */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    font-size: 1.8rem; /* 40px */
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.description {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 300;
+    margin-top: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* --- Bagian Kanan (Login Side) --- */
+.login-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Memposisikan form di sebelah kanan */
+    align-items: center;
+    padding: 60px 0;
+}
+
+.form-card {
+    /* Mengganti .login-box */
+    background: var(--card-bg-color);
+    backdrop-filter: blur(15px); 
+    padding: 40px;
+    border-radius: var(--card-border-radius);
+    width: 500px;
+    height: 500px; /* Mempertahankan tinggi yang Anda tentukan */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Memusatkan isi form secara vertikal */
+}
+
+.form-card h2 {
+    color: var(--text-color-light);
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.input-group {
+    margin: 10px 0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.25rem; /* 20px */
+    font-family: var(--font-poppins);
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #0077e6;
+}
+
+.extra-links {
+    text-align: right; /* Menyesuaikan posisi link "Forgot Password" */
+    margin-bottom: 20px;
+}
+
+.extra-links a {
+    color: #acd9ff; /* Warna dari kode Anda */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.extra-links a:hover {
+    color: #fff;
+}
+
+.register-prompt {
+    text-align: center;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.register-prompt a {
+    color: #5bb4ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.register-prompt a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- Media Query untuk Responsif --- */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        background: none; 
+        padding: 0;
+    }
+
+    .marketing-side {
+        flex: none;
+        padding: 30px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7); /* Overlay gelap agar teks terbaca */
+        max-width: 100%;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle, .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login-side {
+        flex: none;
+        padding: 30px;
+        background: url('/login.jpg') no-repeat center center/cover;
+        min-height: 50vh;
+        justify-content: center;
+    }
+    
+    .form-card {
+        max-width: 100%;
+    }
+}
